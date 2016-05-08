@@ -15,10 +15,14 @@ echo "Setting up project: $PROJECT_NAME"
 # list of all files that contain template code for project setup
 files=( conf/entrypoint.sh conf/supervisor.project_name.conf conf/uwsgi.ini docker-compose.yml Dockerfile project_dir/urls.py project_dir/settings.py project_dir/wsgi.py project_dir/templates/base.html project_dir/templates/index.html )
 
+# A uuid should be enough for random
+randomvalue=$(python  -c 'import uuid; print uuid.uuid1()')
+
 # Iterate files and replace template code with the project name
 for f in "${files[@]}"
 do
     sed -i '' -e "s/<project_name>/$PROJECT_NAME/" ${f}
+    sed -i '' -e "s/SECRET_KEY_PLACEHOLDER/$randomvalue/" ${f}
 done
 
 # Rename config files

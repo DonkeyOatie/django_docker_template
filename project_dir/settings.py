@@ -23,7 +23,7 @@ def here(x):
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fhomej2)(1hy-%@(+@n56+qvgylo02czvrp2u358$o#so@yrr@'
+SECRET_KEY = 'SECRET_KEY_PLACEHOLDER'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
