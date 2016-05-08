@@ -21,6 +21,10 @@ do
     sed -i '' -e "s/<project_name>/$PROJECT_NAME/" ${f}
 done
 
+# Rename config files
+mv conf/nginx.project_name.conf conf/nginx.$PROJECT_NAME.conf
+mv conf/supervisor.project_name.conf conf/supervisor.$PROJECT_NAME.conf
+
 # Finally move project dir to new name
 mv project_dir $PROJECT_NAME
 
