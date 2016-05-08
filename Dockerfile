@@ -30,7 +30,7 @@ ADD conf/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 RUN mkdir -p /etc/supervisor/conf.d && mkdir -p /var/log/supervisor
-RUN ln -sf /code/conf/supervisor.<project_name>.conf /etc/supervisor/conf.d/gc.conf
+RUN ln -sf /code/conf/supervisor.<project_name>.conf /etc/supervisor/conf.d/app.conf
 RUN ln -sf /code/conf/supervisord.conf /etc/supervisor/supervisord.conf
 
 ADD conf/nginx.<project_name>.conf /etc/nginx/sites-enabled/default
